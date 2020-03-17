@@ -53,31 +53,23 @@ signs data set:
 
 #### 2. Include an exploratory visualization of the dataset.
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
 
-![alt text][image1]
 
 ### Design and Test a Model Architecture
 
 #### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
-As a first step, I decided to convert the images to grayscale because ...
+I am feeding color images into the network, I tried grayscaleing but it did not improve the outcome. It also seemed counterintuitive that the color does not contain information.
 
-Here is an example of a traffic sign image before and after grayscaling.
+As a last step, I normalized the image data to get a mean value of 0 and a range of -1 to +1.
 
-![alt text][image2]
-
-As a last step, I normalized the image data because ...
-
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
+The image training set is augmented by changing the brightness of the images in the training set so that every class has the same number of training images.
+Other augmenting ideas e.g. flipping/mirroring/rotating did not improve the output what made sense to me because this can change the meaning/class of a traffic sign and thus does not improve classification. 
 
 Here is an example of an original image and an augmented image:
 
-![alt text][image3]
+<img src="image_orig_610.jpg" alt="drawing" width="400"/>
 
-The difference between the original data set and the augmented data set is the following ... 
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
@@ -87,22 +79,30 @@ My final model consisted of the following layers:
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
+| Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x6 	|
 | RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
+| Max pooling	      	| 2x2 stride,  outputs 14x14x6 					|
+| Convolution 5x5	    | 1x1 stride, valid padding, outputs 10x10x16   |
+| RELU    				|												|
+| Max pooling	      	| 2x2 stride,  outputs 5x5x16 					|
+| Flatten		      	| outputs 1x400 								|
+| Fully connected		| input 400, output 120        					|
+| Fully connected		| input 120, output 84        					|
+| Fully connected		| input 84, output 43        					|
  
 
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used an ....
+I used LeNet and most of the parameters from the previous excercise, i.e. 
+- AdamOptimizer with a training rate of 0.0011
+- EPOCHS = 50
+- BATCH_SIZE = 256
+
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+
+
 
 My final model results were:
 * training set accuracy of ?
