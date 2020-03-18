@@ -66,9 +66,11 @@ As a last step, I normalized the image data to get a mean value of 0 and a range
 The image training set is augmented by changing the brightness of the images in the training set so that every class has the same number of training images.
 Other augmenting ideas e.g. flipping/mirroring/rotating did not improve the output what made sense to me because this can change the meaning/class of a traffic sign and thus does not improve classification. 
 
-Here is an example of an original image and an augmented image:
+Here is an example of an original image and two augmented images:
 
-<img src="image_orig_610.jpg" alt="drawing" width="400"/>
+<img src="image_orig_610.jpg" alt="image original"/>
+<img src="image_brighter_610.jpg" alt="image brighter"/>
+<img src="image_darker_610.jpg" alt="image darker"/>
 
 
 
@@ -106,8 +108,16 @@ I used LeNet and most of the parameters from the previous excercise, i.e.
 
 My final model results were:
 * training set accuracy of ?
+Train Accuracy = 1.000
+
 * validation set accuracy of ? 
+Validation Accuracy = 0.948
+
+
 * test set accuracy of ?
+Test Accuracy = 0.936
+
+Test Accuracy = 0.4
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
