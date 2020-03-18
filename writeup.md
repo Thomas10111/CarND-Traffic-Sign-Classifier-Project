@@ -68,9 +68,9 @@ Other augmenting ideas e.g. flipping/mirroring/rotating did not improve the outp
 
 Here is an example of an original image and two augmented images:
 
-<img src="image_orig_610.jpg" alt="image original"/>
-<img src="image_brighter_610.jpg" alt="image brighter"/>
-<img src="image_darker_610.jpg" alt="image darker"/>
+<img src="WriteUp/image_orig_610.jpg" alt="image original"/>
+<img src="WriteUp/image_brighter_610.jpg" alt="image brighter"/>
+<img src="WriteUp/image_darker_610.jpg" alt="image darker"/>
 
 
 
