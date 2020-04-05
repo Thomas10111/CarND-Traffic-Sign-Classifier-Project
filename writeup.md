@@ -207,19 +207,4 @@ For the fifth image ...
 
 In the visual output the horizontal bar of the Do-Not_Enter sign is highlighted. 
 
-<img src="feature_map_0.jpg" alt="Feature map 0"/>
-<img src="feature_map_1.jpg" alt="Feature map 1"/>
-<img src="feature_map_2.jpg" alt="Feature map 2"/>
-<img src="feature_map_3.jpg" alt="Feature map 3"/>
-<img src="feature_map_4.jpg" alt="Feature map 4"/>
-<img src="feature_map_5.jpg" alt="Feature map 5"/>
-<img src="feature_map_6.jpg" alt="Feature map 6"/>
-<img src="feature_map_7.jpg" alt="Feature map 7"/>
-<img src="feature_map_8.jpg" alt="Feature map 8"/>
-<img src="feature_map_9.jpg" alt="Feature map 9"/>
-<img src="feature_map_10.jpg" alt="Feature map 10"/>
-<img src="feature_map_11.jpg" alt="Feature map 11"/>
-<img src="feature_map_12.jpg" alt="Feature map 12"/>
-<img src="feature_map_13.jpg" alt="Feature map 13"/>
-<img src="feature_map_14.jpg" alt="Feature map 14"/>
 <img src="feature_map_15.jpg" alt="Feature map 15"/>
