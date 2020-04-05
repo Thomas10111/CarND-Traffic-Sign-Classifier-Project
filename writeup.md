@@ -130,7 +130,7 @@ I chose the LeNet architecture because it was introduced in the lecture and has 
 
 Here are five German traffic signs that I found on the web:
 
-<img src="Do-not-Enter.jpg" alt="Do Not Enter"/>
+<img src="Do-Not-Enter.jpg" alt="Do Not Enter"/>
 <img src="No_speed_limit_sign.jpg" alt="No Speed Limit"/>
 <img src="german_4.jpg" alt="60 km per h"/>
 <img src="mifuUb0.jpg" alt="Roadwork"/>
