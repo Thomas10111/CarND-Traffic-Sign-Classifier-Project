@@ -96,7 +96,7 @@ My final model consisted of the following layers:
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-I used LeNet and most of the parameters from the previous excercise, i.e. 
+I used LeNet and most of the parameters from the previous exercise, i.e. 
 - AdamOptimizer with a training rate of 0.0011
 - EPOCHS = 50
 - BATCH_SIZE = 256
@@ -104,32 +104,24 @@ I used LeNet and most of the parameters from the previous excercise, i.e.
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
-
-
 My final model results were:
 * training set accuracy of ?
-Train Accuracy = 1.000
+INFO:tensorflow:Restoring parameters from ./lenet
+Training Accuracy = 0.963
+
 
 * validation set accuracy of ? 
-Validation Accuracy = 0.948
+INFO:tensorflow:Restoring parameters from ./lenet
+Validation Accuracy = 0.873
 
 
 * test set accuracy of ?
-Test Accuracy = 0.936
+INFO:tensorflow:Restoring parameters from ./lenet
+Test Accuracy = 0.882
 
-Test Accuracy = 0.4
 
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
-
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+I chose the LeNet architecture because it was introduced in the lecture and has proven to be sucessfull. The trained model can correctly identify most of the presented images.
+ 
  
 
 ### Test a Model on New Images
@@ -138,10 +130,12 @@ If a well known architecture was chosen:
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+<img src="Do-not-Enter.jpg" alt="Do Not Enter"/>
+<img src="No_speed_limit_sign.jpg" alt="No Speed Limit"/>
+<img src="german_4.jpg" alt="60 km per h"/>
+<img src="mifuUb0.jpg" alt="Roadwork"/>
+<img src="traffic_light.jpg" alt="Traffic Light"/>
 
-The first image might be difficult to classify because ...
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -149,33 +143,83 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Do Not Enter      	| Do Not Enter   								| 
+| No Speed Limit     	| No Speed Limit 								|
+| 60 km/h				| 60 km/h										|
+| Roadwork	      		| Roadwork					 					|
+| Traffic Light			| Traffic Light      							|
 
-
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The code for making predictions on my final model is located in the 43th cell of the Ipython notebook. I think there is something wrong because the outcome looks too good the net is always 100% sure that the image was classified correctly.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+For the first image, the model is relatively sure that this is a stop sign (probability of 1.0), and the image does contain a Do-Not-Enter sign. The top five soft max probabilities were
 
-| Probability         	|     Prediction	        					| 
+| Probability		    |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| 1.0  		    		| Do Not Enter   								| 
+| 0.0	     			| No Speed Limit 								|
+| 0.0					| 60 km/h										|
+| 0.0	      			| Roadwork					 					|
+| 0.0					| Traffic Light      							|
 
 
 For the second image ... 
+| Probability		    |     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 0.0  		    		| Do Not Enter   								| 
+| 1.0	     			| No Speed Limit 								|
+| 0.0					| 60 km/h										|
+| 0.0	      			| Roadwork					 					|
+| 0.0					| Traffic Light      							|
+
+For the third image ... 
+| Probability		    |     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 0.0  		    		| Do Not Enter   								| 
+| 0.0	     			| No Speed Limit 								|
+| 1.0					| 60 km/h										|
+| 0.0	      			| Roadwork					 					|
+| 0.0					| Traffic Light      							|
+
+For the fourth image ... 
+| Probability		    |     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 0.0  		    		| Do Not Enter   								| 
+| 0.0	     			| No Speed Limit 								|
+| 0.0					| 60 km/h										|
+| 1.0	      			| Roadwork					 					|
+| 0.0					| Traffic Light      							|
+
+For the fifth image ... 
+| Probability		    |     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 0.0  		    		| Do Not Enter   								| 
+| 0.0	     			| No Speed Limit 								|
+| 0.0					| 60 km/h										|
+| 0.0	      			| Roadwork					 					|
+| 1.0					| Traffic Light      							|
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
+In the visual output the horizontal bar of the Do-Not_Enter sign is highlighted. 
 
+<img src="feature_map_0.jpg" alt="Feature map 0"/>
+<img src="feature_map_1.jpg" alt="Feature map 1"/>
+<img src="feature_map_2.jpg" alt="Feature map 2"/>
+<img src="feature_map_3.jpg" alt="Feature map 3"/>
+<img src="feature_map_4.jpg" alt="Feature map 4"/>
+<img src="feature_map_5.jpg" alt="Feature map 5"/>
+<img src="feature_map_6.jpg" alt="Feature map 6"/>
+<img src="feature_map_7.jpg" alt="Feature map 7"/>
+<img src="feature_map_8.jpg" alt="Feature map 8"/>
+<img src="feature_map_9.jpg" alt="Feature map 9"/>
+<img src="feature_map_10.jpg" alt="Feature map 10"/>
+<img src="feature_map_11.jpg" alt="Feature map 11"/>
+<img src="feature_map_12.jpg" alt="Feature map 12"/>
+<img src="feature_map_13.jpg" alt="Feature map 13"/>
+<img src="feature_map_14.jpg" alt="Feature map 14"/>
+<img src="feature_map_15.jpg" alt="Feature map 15"/>
