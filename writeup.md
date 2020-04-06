@@ -42,7 +42,7 @@ signs data set:
 
 #### 2. Include an exploratory visualization of the dataset.
 
-<img src="vis_dataset.jpg" alt="Visualization dataset"/>
+<img src="vis_dataset.jpg" alt="Visualization dataset"/  width="300">
 
 ### Design and Test a Model Architecture
 
