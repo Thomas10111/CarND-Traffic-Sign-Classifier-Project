@@ -96,17 +96,17 @@ I used LeNet and most of the parameters from the previous exercise, i.e.
 My final model results were:
 * training set accuracy of ?
 INFO:tensorflow:Restoring parameters from ./lenet
-Training Accuracy = 0.963
+Training Accuracy = 1.0
 
 
 * validation set accuracy of ? 
 INFO:tensorflow:Restoring parameters from ./lenet
-Validation Accuracy = 0.873
+Validation Accuracy = 0.953
 
 
 * test set accuracy of ?
 INFO:tensorflow:Restoring parameters from ./lenet
-Test Accuracy = 0.882
+Test Accuracy = 0.932
 
 
 I chose the LeNet architecture because it was introduced in the lecture and has proven to be sucessfull. The trained model can correctly identify most of the presented images.
