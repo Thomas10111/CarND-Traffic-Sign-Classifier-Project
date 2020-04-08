@@ -46,13 +46,16 @@ signs data set:
 
 ### Design and Test a Model Architecture
 
-#### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
+#### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? 
+#### Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale,
+#### normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training,
+#### describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data.
+#### Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
 I am feeding color images into the network, I tried grayscaleing but it did not improve the outcome. It also seemed counterintuitive that the color does not contain information.
-
 As a last step, I normalized the image data to get a mean value of 0 and a range of -1 to +1.
 
-The image training set is augmented by changing the brightness of the images in the training set so that every class has the same number of training images.
+The image training set is augmented by changing the brightness of the images in the training set, so that every class has the same number of training images.
 Other augmenting ideas e.g. flipping/mirroring/rotating did not improve the output what made sense to me because this can change the meaning/class of a traffic sign and thus does not improve classification. 
 
 Here is an example of an original image and two augmented images:
@@ -60,6 +63,10 @@ Here is an example of an original image and two augmented images:
 <img src="WriteUp/image_orig_610.jpg" alt="image original"/>
 <img src="WriteUp/image_brighter_610.jpg" alt="image brighter"/>
 <img src="WriteUp/image_darker_610.jpg" alt="image darker"/>
+
+After augmenting the training set, the 
+* total number of training images is 185,760
+* with 4320 images in each class.
 
 
 
@@ -119,11 +126,13 @@ I chose the LeNet architecture because it was introduced in the lecture and has 
 
 Here are five German traffic signs that I found on the web:
 
-<img src="Do-Not-Enter.jpg" alt="Do Not Enter"/>
-<img src="No_speed_limit_sign.jpg" alt="No Speed Limit"/>
-<img src="german_4.jpg" alt="60 km per h"/>
-<img src="mifuUb0.jpg" alt="Roadwork"/>
-<img src="traffic_light.jpg" alt="Traffic Light"/>
+|Image      															| 				    Discussion 											|
+|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|
+| <img src="Do-Not-Enter.jpg" alt="Do Not Enter"  width="200"/>      	| Easy. Round, alot of red with clear white bar in the middle. 			|
+| <img src="No_speed_limit_sign.jpg" alt="No Speed Limit" width="200"/>	| Easy. Round, white with black bar.									|
+| <img src="german_4.jpg" alt="60 km per h" width="200"/>				| Moderate. Recognizing the actual number on the sign is challenging	|
+| <img src="mifuUb0.jpg" alt="Roadwork" width="200"/>					| Moderate. Because there are several signs with similar shape. 		|
+| <img src="traffic_light.jpg" alt="Traffic Light" width="200"/>		| Easy. Common shape, but unique colors.  								|
 
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
